@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>practicas de panchito</title>
+</head>
+<body>
+
+  <h2>a) Análisis de un número ingresado</h2>
+  <input type="text" id="numeroUsuario" placeholder="Introduce un número" />
+  <button onclick="analizarNumero()">Analizar Número</button>
+  <p id="resultadoNumero"></p>
+
+  <h2>b) Operaciones con Array de Números</h2>
+  <button onclick="operacionesConArray()">Realizar operaciones con Array</button>
+  <p id="resultadoArray"></p>
+
+  <h2>c) Análisis de un Número Definido</h2>
+  <button onclick="analizarNumeroDefinido()">Analizar Número Definido</button>
+  <p id="resultadoNumeroDefinido"></p>
+
+  <script>
+    // a) Analizar un número ingresado por el usuario
+    function analizarNumero() {
+      let numero = document.getElementById("numeroUsuario").value;
+      numero = Number(numero); // Convertir la entrada a número
+
+      let resultado = "";
+
+      // Comprobar si el número es mayor que MAX_SAFE_INTEGER o menor que MIN_SAFE_INTEGER
+      if (numero > Number.MAX_SAFE_INTEGER) {
+        resultado = "El número es mayor que MAX_SAFE_INTEGER.";
+      } else if (numero < Number.MIN_SAFE_INTEGER) {
+        resultado = "El número es menor que MIN_SAFE_INTEGER.";
+      }
+      // Comprobar si el número es menor que MIN_VALUE
+      else if (numero < Number.MIN_VALUE) {
+        resultado = "El número es menor que MIN_VALUE.";
+      }
+      // Comprobar si el número es válido o NaN
+      else if (isNaN(numero)) {
+        resultado = "El valor ingresado no es un número (NaN).";
+      } else {
+        resultado = "El número es válido.";
+      }
+
+      document.getElementById("resultadoNumero").innerText = resultado;
+    }
+
+    // b) Operaciones con Array de Números
+    function operacionesConArray() {
+      const array = [10, 25, 30, 45, 50];
+      
+      let resultado = "";
+      // Mostrar el primer y el último número
+      resultado += `Array original: [${array}]\n`;
+      resultado += `Primer número: ${array[0]}\n`;
+      resultado += `Último número: ${array[array.length - 1]}\n`;
+      
+      // Calcular la suma de todos los números
+      let sumaTotal = array.reduce((acc, num) => acc + num, 0);
+      resultado += `Suma total: ${sumaTotal}\n`;
+      
+      // Agregar un nuevo número al final
+      array.push(60);
+      resultado += `Array actualizado: [${array}]`;
+
+      document.getElementById("resultadoArray").innerText = resultado;
+    }
+
+    // c) Análisis de un Número Definido
+    function analizarNumeroDefinido() {
+      const numero = 1234.5678;
+
+      let resultado = "--- Análisis del Número ---\n";
+      resultado += `Número original: ${numero}\n`;
+
+      // Comprobar si el número es entero
+      resultado += `¿Es entero? ${Number.isInteger(numero) ? "Sí" : "No"}\n`;
+      
+      // Redondear el número a 2 decimales
+      resultado += `Redondeado a 2 decimales: ${numero.toFixed(2)}\n`;
+      
+      // Mostrar el número en notación científica
+      resultado += `Notación científica (3 dígitos): ${numero.toExponential(3)}`;
+
+      document.getElementById("resultadoNumeroDefinido").innerText = resultado;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Practicas valeria</title>
+</head>
+<body>
+
+
+  <script>
+    // 1. Función saludoPersonalizado usando template strings
+    function saludoPersonalizado(nombre, edad) {
+      return `Hola ${nombre}, tienes ${edad} años.`;
+    }
+
+    console.log(saludoPersonalizado("Andrea", 21));
+
+    // 2. Función esPar
+    function esPar(numero) {
+      return numero % 2 === 0;
+    }
+
+    console.log("¿8 es par?", esPar(8));  // true
+    console.log("¿5 es par?", esPar(5));  // false
+
+    // 3. Uso de BigInt
+    const numeroGrande = 9007199254740991n;
+    const otroNumeroGrande = 10000000000000000n;
+
+    console.log("Número grande:", numeroGrande);
+    console.log("Otro número grande:", otroNumeroGrande);
+    console.log("Suma de BigInts:", numeroGrande + otroNumeroGrande);
+  </script>
+
+</body>
+</html>

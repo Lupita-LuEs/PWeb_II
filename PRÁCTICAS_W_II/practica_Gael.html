@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Practicas gaelo </title>
+</head>
+<body>
+
+  <h2>Lista de Estudiantes</h2>
+  <p id="nombres"></p>
+  <input type="text" id="nombreBusqueda" placeholder="Buscar nombre de estudiante" />
+  <button onclick="buscarEstudiante()">Buscar Estudiante</button>
+  <p id="resultadoBusqueda"></p>
+  <p id="nombresOrdenados"></p>
+
+  <script>
+    // 1. Arreglo de nombres de estudiantes
+    const estudiantes = ["Gaelo", "Danita", "EmiliAno", "Rodri", "Lupita"];
+
+    // Mostrar todos los nombres en una sola línea separados por comas
+    document.getElementById("nombres").innerText = "Estudiantes: " + estudiantes.join(", ");
+
+    // 2. Función para buscar un estudiante
+    function buscarEstudiante() {
+      const nombreBusqueda = document.getElementById("nombreBusqueda").value.trim();
+      let resultado = "";
+
+      if (estudiantes.includes(nombreBusqueda)) {
+        resultado = "El estudiante está en la lista.";
+      } else {
+        resultado = "El estudiante no está en la lista.";
+      }
+
+      document.getElementById("resultadoBusqueda").innerText = resultado;
+    }
+
+    // 3. Ordenar los nombres alfabéticamente
+    estudiantes.sort();
+
+    // Mostrar la lista ordenada
+    document.getElementById("nombresOrdenados").innerText = "Lista ordenada alfabéticamente: " + estudiantes.join(", ");
+  </script>
+
+</body>
+</html>

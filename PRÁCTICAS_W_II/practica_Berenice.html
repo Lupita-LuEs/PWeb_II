@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica Bere 1</title>
+</head>
+<body>
+
+	<p>Escriba su nombre</p>
+	<input type="text" id="idNombre" blaceholder="escriba su nombre">
+	<button onclick="saludar()">Enviar</button>
+	<br>
+	<p id="idTexto">Texto</p>
+
+
+	<script type="text/javascript">
+		function saludar(){
+			let nombre = document.getElementById("idNombre").value;
+			let mensaje = 'Hola, ' + nombre+ ', bienvenido a la práctica de JavaScript!';
+
+			alert(mensaje);
+			console.log(mensaje);
+			document.getElementById("idTexto").innerText = mensaje;
+		}
+	</script>
+
+</body>
+</html>

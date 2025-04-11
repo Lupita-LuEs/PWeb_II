@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio de Alondra</title>
+  <!-- lo hice así pq ya no tengo el del curriclum pero el chiste es el mismo-->
+  <style>
+    #nombre {
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    #imagen {
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="nombre">Lupita Luna </h1>
+
+  <img id="imagen" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f973.png" >
+
+  <br><br>
+
+  <button onclick="cambiar()">Cambiar</button>
+  <button onclick="revertir()">Revertir</button>
+
+  <script>
+    // Valores originales
+    const colorOriginal = "black";
+    const imagenOriginal = "https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f973.png";
+
+    // Valores modificados
+    const colorNuevo = "blue";
+    const imagenNueva = "https://wildcat.arizona.edu/wp-content/uploads/2016/04/c73e9e76-7458-4ffc-87a2-c5606ae04542.sized-1000x1000-1-900x900.png";
+
+    function cambiar() {
+      document.getElementById("nombre").style.color = colorNuevo;
+      document.getElementById("imagen").src = imagenNueva;
+    }
+
+    function revertir() {
+      document.getElementById("nombre").style.color = colorOriginal;
+      document.getElementById("imagen").src = imagenOriginal;
+    }
+  </script>
+
+</body>
+</html>

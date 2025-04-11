@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mi ejeccio</title>
+</head>
+<body>
+
+	
+
+	<input type="text" id="idInput">
+	<button onclick="funBoton()">Enviar</button>
+
+	<p id="idTexto"></p>
+
+	<script type="text/javascript">
+		function convertir(nombre){
+			let nombreMayuscula = nombre.toUpperCase();
+			let tieneE = nombreMayuscula.includes("E");
+			let letra = nombreMayuscula.charAt(0);
+
+			document.getElementById("idTexto").innerText = "HOLA, "+nombreMayuscula+ " TU NOMBRE CONTIENE LA LETRA E?"+tieneE+ ". EMPIEZA CON LA LETRA "+letra;
+		}
+
+		function funBoton(){
+			convertir(document.getElementById("idInput").value.trim());
+		}
+	</script>
+
+</body>
+</html>

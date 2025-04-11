@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios de JavaScript</title>
+</head>
+<body>
+
+  <!-- EJERCICIO 1: JS Object Display -->
+  <section>
+    <h2>1. JS Object Display</h2>
+    <p id="displayObjeto"></p>
+  </section>
+
+  <!-- EJERCICIO 2: JS Object Constructors -->
+  <section>
+    <h2>2. JS Object Constructors</h2>
+    <p id="constructorObjeto"></p>
+  </section>
+
+  <!-- EJERCICIO 3: JavaScript Events -->
+  <section>
+    <h2>3. JavaScript Events</h2>
+    <h3 id="textoEvento">Haz clic en el botón para cambiar este texto</h3>
+    <button onclick="cambiarTexto()">Cambiar Texto</button>
+  </section>
+
+  <script>
+    // EJERCICIO 1: Mostrar un objeto
+    const coche = {
+      marca: "Toyota",
+      modelo: "Corolla",
+      color: "Rojo",
+      año: 2022
+    };
+
+    console.log("Objeto coche:", coche);
+    document.getElementById("displayObjeto").innerText =
+      `Marca: ${coche.marca}, Modelo: ${coche.modelo}, Color: ${coche.color}, Año: ${coche.año}`;
+
+    // EJERCICIO 2: Constructor de objeto
+    function Animal(nombre, especie, edad, sonido) {
+      this.nombre = nombre;
+      this.especie = especie;
+      this.edad = edad;
+      this.sonido = sonido;
+    }
+
+    const miAnimal = new Animal("Mila", "Vaca", 4, "Muu");
+
+    console.log("Objeto creado con constructor:", miAnimal);
+    document.getElementById("constructorObjeto").innerText =
+      `Nombre: ${miAnimal.nombre}, Especie: ${miAnimal.especie}, Edad: ${miAnimal.edad}, Sonido: ${miAnimal.sonido}`;
+
+    // EJERCICIO 3: Evento de click
+    function cambiarTexto() {
+      document.getElementById("textoEvento").innerText = "¡El texto ha cambiado!";
+    }
+  </script>
+
+</body>
+</html>
